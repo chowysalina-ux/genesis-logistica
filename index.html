@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Genesis Logística</title>
+
+<style>
+
+/* ================= RESET ================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#f4f6f9;
+color:#1f2937;
+line-height:1.5;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:60px 20px;
+}
+
+/* ================= HEADER ================= */
+
+header{
+background:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 40px;
+box-shadow:0 2px 10px rgba(0,0,0,.05);
+position:sticky;
+top:0;
+z-index:10;
+}
+
+.logo{
+height:42px;
+}
+
+.btn-primary{
+background:#ff6a00;
+color:white;
+padding:14px 24px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+display:inline-block;
+}
+
+.btn-outline{
+border:2px solid #2b6cff;
+color:#2b6cff;
+padding:12px 22px;
+border-radius:8px;
+background:white;
+cursor:pointer;
+margin-right:12px;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+display:grid;
+grid-template-columns:1fr 1fr;
+align-items:center;
+gap:50px;
+}
+
+.hero h1{
+font-size:46px;
+margin-bottom:20px;
+}
+
+.hero p{
+color:#6b7280;
+margin-bottom:20px;
+}
+
+.hero ul{
+list-style:none;
+margin-bottom:25px;
+}
+
+.hero li{
+margin:8px 0;
+}
+
+.hero img{
+width:100%;
+border-radius:18px;
+}
+
+/* ================= SECTION GENERIC ================= */
+
+.section{
+background:white;
+}
+
+.two-col{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+}
+
+.two-col img{
+width:100%;
+border-radius:18px;
+}
+
+/* ================= STEPS ================= */
+
+.steps{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+margin-top:40px;
+}
+
+.step{
+background:white;
+padding:25px;
+border-radius:14px;
+box-shadow:0 4px 12px rgba(0,0,0,.05);
+text-align:center;
+}
+
+/* ================= BRANDS ================= */
+
+.brands{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px;
+margin-top:30px;
+}
+
+.brand{
+background:#f1f3f6;
+padding:18px;
+border-radius:10px;
+text-align:center;
+font-weight:bold;
+}
+
+/* ================= FORM ================= */
+
+.cta{
+background:linear-gradient(135deg,#2b6cff,#3b82f6);
+color:white;
+text-align:center;
+}
+
+.form-box{
+background:white;
+max-width:500px;
+margin:30px auto 0;
+padding:30px;
+border-radius:16px;
+}
+
+.form-box input{
+width:100%;
+padding:14px;
+margin:10px 0;
+border-radius:8px;
+border:1px solid #ddd;
+}
+
+/* ================= FAQ ================= */
+
+.faq-item{
+background:white;
+margin:10px 0;
+padding:18px;
+border-radius:10px;
+cursor:pointer;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+background:#0f172a;
+color:white;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:2fr 1fr 1fr;
+gap:40px;
+}
+
+footer h4{
+margin-bottom:12px;
+}
+
+footer p{
+color:#cbd5e1;
+font-size:14px;
+}
+
+/* ================= MODAL ================= */
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.7);
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+
+.modal img{
+max-width:90%;
+border-radius:14px;
+}
+
+.close{
+position:absolute;
+top:30px;
+right:40px;
+color:white;
+font-size:30px;
+cursor:pointer;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+.hero,
+.two-col{
+grid-template-columns:1fr;
+}
+
+.steps,
+.brands{
+grid-template-columns:1fr 1fr;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+<img src="img/logo.png" class="logo">
+<a class="btn-primary" href="https://wa.me/541123561407" target="_blank">
+Obtener Cotización
+</a>
+</header>
+
+<!-- HERO -->
+
+<section class="container hero">
+
+<div>
+<h1>Evitá reclamos y demoras cuando tu volumen escala.</h1>
+
+<p>
+Gestionamos +2.200 envíos diarios con seguimiento en tiempo real y entregas de 11 a 23 hs.
+</p>
+
+<ul>
+<li>✅ Retiramos y entregamos el mismo día</li>
+<li>✅ Tracking en tiempo real</li>
+<li>✅ Capacidad ilimitada</li>
+<li>✅ Cobertura AMBA completa</li>
+</ul>
+
+<button class="btn-outline" onclick="openModal()">Ver zonas de envío</button>
+
+<a class="btn-primary" href="https://wa.me/541123561407" target="_blank">
+Cotizar por WhatsApp
+</a>
+
+</div>
+
+<img src="img/oficina.jpeg">
+
+</section>
+
+<!-- CONTROLAMOS ENVÍO -->
+
+<section class="container two-col">
+<img src="img/flota.png">
+
+<div>
+<h2>No solo entregamos. <span style="color:#2b6cff">Controlamos cada envío.</span></h2>
+<p>Seguimiento desde que sale de tu depósito hasta la puerta del cliente.</p>
+<a class="btn-primary" href="https://wa.me/541123561407" target="_blank">Consultar por WhatsApp</a>
+</div>
+</section>
+
+<!-- PASOS -->
+
+<section class="container">
+<h2 style="text-align:center">Proceso simple en 4 pasos</h2>
+
+<div class="steps">
+<div class="step">1<br>Cotización por WhatsApp</div>
+<div class="step">2<br>Análisis de volumen</div>
+<div class="step">3<br>Retiramos en tu depósito</div>
+<div class="step">4<br>Entrega same-day</div>
+</div>
+
+</section>
+
+<!-- MARCAS -->
+
+<section class="container">
+<h2 style="text-align:center">Marcas que ya confían su logística en nosotros</h2>
+
+<div class="brands">
+<div class="brand">Mixio Argentina</div>
+<div class="brand">Pronto Eléctrica</div>
+<div class="brand">Unicomex Argentina</div>
+<div class="brand">Pets Moom</div>
+<div class="brand">AGC Herramientas</div>
+<div class="brand">InfanCenter</div>
+<div class="brand">Corpofit</div>
+<div class="brand">NaturalColors</div>
+</div>
+</section>
+
+<!-- PROTECCIÓN -->
+
+<section class="container two-col">
+<div>
+<h2>Tu mercadería está <span style="color:#2b6cff">protegida</span></h2>
+<p>Mercadería asegurada desde retiro hasta entrega final.</p>
+<a class="btn-primary" href="https://wa.me/541123561407">Consultar cobertura</a>
+</div>
+
+<img src="img/carga.jpeg">
+</section>
+
+<!-- FORM -->
+
+<section class="container cta">
+<h2>¿Listo para optimizar tu logística?</h2>
+
+<div class="form-box">
+<input placeholder="Tu nombre completo">
+<input placeholder="Empresa (opcional)">
+<input placeholder="Cantidad de envíos diarios">
+<input placeholder="Zona de retiro">
+
+<a class="btn-primary" href="https://wa.me/541123561407">Enviar por WhatsApp</a>
+</div>
+</section>
+
+<!-- FAQ -->
+
+<section class="container">
+<h2 style="text-align:center">Preguntas frecuentes</h2>
+
+<div class="faq-item">¿Hacen Mercado Flex?</div>
+<div class="faq-item">¿Entregan en el día?</div>
+<div class="faq-item">¿Tienen tracking en tiempo real?</div>
+<div class="faq-item">¿Cómo cotizan?</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+<div class="container footer-grid">
+
+<div>
+<img src="img/logo.png" class="logo">
+<p>Logística same-day para vendedores de alto volumen.</p>
+</div>
+
+<div>
+<h4>Servicios</h4>
+<p>Envíos Same-Day</p>
+<p>Retiros masivos</p>
+<p>Tracking en tiempo real</p>
+</div>
+
+<div>
+<h4>Contacto</h4>
+<p>WhatsApp</p>
+<p>info@genesislogistica.com.ar</p>
+<p>11 2356-1407</p>
+</div>
+
+</div>
+</footer>
+
+<!-- MODAL -->
+
+<div class="modal" id="modal">
+<span class="close" onclick="closeModal()">✕</span>
+<img src="img/mapa.png">
+</div>
+
+<script>
+function openModal(){
+document.getElementById("modal").style.display="flex";
+}
+function closeModal(){
+document.getElementById("modal").style.display="none";
+}
+</script>
+
+</body>
+</html>
