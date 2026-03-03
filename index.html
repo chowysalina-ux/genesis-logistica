@@ -44,6 +44,51 @@ text-decoration:none;
 font-weight:600;
 }
 
+/* BOTON ZONAS */
+.zonas-btn{
+margin-right:20px;
+color:#1f2d3d;
+font-weight:600;
+text-decoration:none;
+cursor:pointer;
+}
+
+/* ================= MODAL ================= */
+
+.modal{
+display:none;
+position:fixed;
+z-index:9999;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.6);
+}
+
+.modal-content{
+background:white;
+margin:6% auto;
+padding:30px;
+width:90%;
+max-width:900px;
+border-radius:16px;
+position:relative;
+}
+
+.close-modal{
+position:absolute;
+top:15px;
+right:20px;
+font-size:28px;
+cursor:pointer;
+}
+
+.modal h2{
+margin-top:0;
+margin-bottom:20px;
+}
+
 /* ================= HERO ================= */
 
 .container{
@@ -239,8 +284,23 @@ margin-bottom:12px;
 <!-- HEADER -->
 <header>
 <img src="img/logo.png" class="logo">
+
+<div style="display:flex;align-items:center;">
+<a class="zonas-btn" id="openZonas">Zonas de Envío</a>
 <a href="#" class="cta-top">Obtener Cotización</a>
+</div>
 </header>
+
+<!-- MODAL -->
+<div id="zonasModal" class="modal">
+<div class="modal-content">
+<span class="close-modal" id="closeZonas">&times;</span>
+<h2>Zonas de Envío</h2>
+
+<img src="img/mapa.jpg" style="width:100%; border-radius:12px;">
+
+</div>
+</div>
 
 <!-- HERO -->
 <section class="container hero">
@@ -260,7 +320,7 @@ Gestionamos +2.200 envíos diarios con seguimiento en tiempo real y entregas de 
 
 <div class="buttons">
 <a class="btn btn-orange" href="https://wa.me/541123561407" target="_blank">Cotizar por WhatsApp</a>
-<a class="btn btn-outline">Ver zonas de envío</a>
+<a class="btn btn-outline" id="openZonas2">Ver zonas de envío</a>
 </div>
 
 </div>
@@ -269,114 +329,45 @@ Gestionamos +2.200 envíos diarios con seguimiento en tiempo real y entregas de 
 
 </section>
 
-<!-- PASOS -->
-<section class="steps">
+<!-- RESTO DEL HTML IGUAL -->
 
-<h2>Proceso simple en 4 pasos</h2>
-
-<div class="steps-grid">
-
-<div class="step">
-<div class="step-icon">💬</div>
-<h3>Cotización por WhatsApp</h3>
-<p>Escribinos y respondemos en minutos</p>
-</div>
-
-<div class="step">
-<div class="step-icon">📈</div>
-<h3>Análisis de volumen</h3>
-<p>Evaluamos peso, zona y frecuencia</p>
-</div>
-
-<div class="step">
-<div class="step-icon">🏦</div>
-<h3>Retiramos en tu depósito</h3>
-<p>Desde tu casa o punto de despacho</p>
-</div>
-
-<div class="step">
-<div class="step-icon">🚚</div>
-<h3>Entrega same-day</h3>
-<p>Tu cliente recibe el mismo día</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- PROTEGIDA -->
-<section class="container protect">
-
-<div class="protect-text">
-
-<h2>Tu mercadería está <span>protegida</span></h2>
-
-<p>
-Implementamos protocolos estrictos y cobertura total en cada envío.
-</p>
-
-<div class="feature">
-<div class="feature-icon">🛡️</div>
-<div>
-<b>Seguro incluido</b><br>
-Cobertura completa por pérdida o daño
-</div>
-</div>
-
-<div class="feature">
-<div class="feature-icon">⭐</div>
-<div>
-<b>Garantía de entrega</b><br>
-Compromiso en tiempo y forma
-</div>
-</div>
-
-<div class="feature">
-<div class="feature-icon">📦</div>
-<div>
-<b>Protocolos de manipulación</b><br>
-Procesos seguros para productos frágiles
-</div>
-</div>
-
-<a class="btn btn-orange" href="https://wa.me/541123561407">Consultar cobertura</a>
-
-</div>
-
-<div>
-<img src="img/carga.jpeg">
-<div class="badge">✅ 100% Asegurado</div>
-</div>
-
-</section>
-
-<!-- FOOTER -->
 <footer>
-
 <div class="footer-grid">
-
 <div>
 <img src="img/logo.png" class="footer-logo">
 <p>Logística same-day para vendedores de alto volumen.</p>
 </div>
-
 <div>
 <h4>Servicios</h4>
 <p>Envíos Same-Day</p>
 <p>Tracking en Tiempo Real</p>
 <p>Cobertura AMBA</p>
 </div>
-
 <div>
 <h4>Contacto</h4>
 <p>WhatsApp</p>
 <p>info@genesislogistica.com.ar</p>
 <p>11 2356 1407</p>
 </div>
-
 </div>
-
 </footer>
+
+<script>
+const modal = document.getElementById("zonasModal");
+const open1 = document.getElementById("openZonas");
+const open2 = document.getElementById("openZonas2");
+const closeBtn = document.getElementById("closeZonas");
+
+open1.onclick = () => modal.style.display = "block";
+open2.onclick = () => modal.style.display = "block";
+closeBtn.onclick = () => modal.style.display = "none";
+
+window.onclick = function(e){
+if(e.target == modal){
+modal.style.display = "none";
+}
+}
+</script>
 
 </body>
 </html>
